@@ -1,0 +1,53 @@
+{%extends 'base1.html'%}
+{%block body_block%}
+
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4" style="color: black;" data-aos="fade-right">
+                <h3 style="text-align: center; color: white">My Profile</h3>
+
+
+        <div class="card" style="width: 18rem;">
+            <img src="{{request.user.profile.picture.url}}" height="150px" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{request.user}}</h5>
+                <p class="card-text">{{request.user.profile.bio}}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Lives in : {{request.user.profile.location}}</li>
+                <li class="list-group-item">DOB : {{request.user.profile.birth_date}}</li>
+                {%if request.user.profile%}
+                <a href="{%url 'pro_update' request.user.pk%}" class="btn-grad">Edit Profile</a>
+                {%else%}
+                <a href="{%url 'add_profile'%}" class="btn-grad">Add Profile</a>
+                {%endif%}
+            </ul>
+
+
+
+
+        </div>
+        <br>
+
+
+    </div>
+
+    <div class="col-4"></div>
+</div>
+
+{%endblock%}
+
+<!--{% if user == request.user %}-->
+<!--{% else %}-->
+<!--{% if is_following %}-->
+<!--<form method="POST" action="{% url 'remove-follower' user.pk %}">-->
+<!--    {% csrf_token %}-->
+<!--    <button class="btn btn-outline-danger" type=submit>UnFollow</button>-->
+<!--</form>-->
+<!--{% else %}-->
+<!--<form method="POST" action="{% url 'add-follower' user.pk %}">-->
+<!--    {% csrf_token %}-->
+<!--    <button class="btn btn-outline-success" type=submit>Follow</button>-->
+<!--</form>-->
+<!--{% endif %}-->
+<!--{% endif %}-->

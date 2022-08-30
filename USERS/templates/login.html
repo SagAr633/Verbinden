@@ -1,0 +1,31 @@
+{%extends 'base2.html'%}
+
+{%block body_block%}
+
+
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+
+        <h1 class="mt-5" style="text-align: center; color: #00bf8f;"><b>VERBINDEN</b></h1>
+        <p class="mb-5" style="text-align: center; color: #00bf8f;">Connect with the world.</p>
+        <form action="" method="post" class="ms-4" >
+
+            {%csrf_token%}
+            {{form.as_p}}
+
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-6">
+                    <input type="submit" value="LogIn" class="btn-grad4">
+                </div>
+                <div class="col-3"></div>
+            </div>
+
+
+        </form>
+    </div>
+    <div class="col-4"></div>
+</div>
+
+{%endblock%}

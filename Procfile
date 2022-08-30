@@ -1,0 +1,1 @@
+web: gunicorn Verbinden_App.wsgi

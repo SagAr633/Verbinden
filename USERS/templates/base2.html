@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="{%static 'css/style2.css'%}">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-4" style="color: #00bf8f;">Verbinden.com</div>
+        <div class="col-4"></div>
+        <div class="col-4">
+            {%if request.get_full_path == '/user/signup'%}
+            <a href="{%url 'login'%}" class="btn-grad4">Already registered? Click here to login</a>
+            {%else%}
+            <a href="{%url 'signup'%}" class="btn-grad4">New to Verbinden?? Sign up now</a>
+            {%endif%}
+        </div>
+    </div>
+
+
+</div>
+
+
+</body>
+<div class="container">
+    {%block body_block%}
+    {%endblock%}
+</div>
+
+</html>

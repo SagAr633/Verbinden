@@ -1,0 +1,28 @@
+{%extends 'base1.html'%}
+{%block body_block%}
+
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4" data-aos="fade-left">
+
+        <h3 style="text-align: center;">Update Profile</h3>
+
+        <form method="post" enctype="multipart/form-data">
+            {%csrf_token%}
+            {{form.as_p}}
+
+            <div class="row">
+                <div class="col-4"></div>
+                <div class="col-4">
+                    <input type="submit" value="Save" class="btn btn-grad">
+                </div>
+                <div class="col-4"></div>
+            </div>
+
+        </form>
+
+    </div>
+    <div class="col-4"></div>
+</div>
+
+{%endblock%}

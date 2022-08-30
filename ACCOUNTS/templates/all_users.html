@@ -1,0 +1,37 @@
+{%extends 'base1.html'%}
+{%block body_block%}
+
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4" style="color: black;" data-aos="fade-left">
+
+        <h3 class="ms-5" style="color: white;">All accounts</h3>
+
+        {%for user in all_users%}
+
+        <div class="card" style="width: 18rem;">
+            <img src="{{user.profile.picture.url}}" height="150px"  class="card-img-top rounded-circle" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{user.username}}</h5>
+                <p class="card-text">{{user.profile.bio}}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Lives in : {{user.profile.location}}</li>
+
+
+            </ul>
+            <div class="card-body">
+
+                <a href="{%url 'other_profile' user.pk%}" class="card-link btn-grad">View Profile</a>
+
+            </div>
+        </div><br>
+
+        {%endfor%}
+
+    </div>
+
+    <div class="col-4"></div>
+</div>
+
+{%endblock%}
